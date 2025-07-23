@@ -55,3 +55,39 @@ This is a **Streamlit-based interactive assistant** built using **LangGraph**, c
 ├── req.txt                    # Python dependencies
 └── README.md                  # Documentation
 ```
+
+## 🛠️ Tech Stack
+
+| Component     | Library / Tool                              |
+|---------------|----------------------------------------------|
+| **LLM**       | Groq (`deepseek-r1-distill-llama-70b`)       |
+| **Embeddings**| HuggingFace (`all-MiniLM-L6-v2`)             |
+| **Vector DB** | ChromaDB (persistent storage)                |
+| **OCR**       | PaddleOCR                                    |
+| **Frontend**  | Streamlit                                    |
+| **Agent**     | LangGraph + LangChain                        |
+
+---
+
+## Setup Instructions
+
+```bash
+# 1. Install dependencies
+pip install -r req.txt
+
+# 2. Add your Groq API key in .env file
+GROQ_API_KEY=your_key_here 
+
+# 3. Run the Streamlit app
+streamlit run main.py
+```
+
+## Memory Handling
+
+- Session-level chat memory stored via st.session_state["chat_history"]  
+- Passed through LangGraph nodes for context-aware follow-up questions
+- Passed through LangGraph nodes for context-aware follow-up questions
+
+
+
+
